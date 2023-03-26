@@ -1,5 +1,6 @@
-# inf3190-tp3-20223
+# Description du projet
+Application Web permettant l'adoption et la mise en adoption d'animaux.
 
-# Pierre-Justin Youenn
-# PIEY78070308
-# Version 15 Decembre 2022
+## Technologies/Outils presents
++ Flask
++ VSCode
