@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+    {% block picture %}
+    <img class="image-acceuil" src="/img/Rechercheimg.jpg" alt="Img accueil">
+    {% endblock %}
+{% block content %}
+    {% if results|length == 0 %}
+        <div>
+            <img src="img/chien_triste.jpg" id="chien_triste" alt="chien_triste">
+            <h2>
+                Aucune animal correspondant a ses criteres n'a ete trouve, recherchez
+                encore ou <a href="/">revenez a la page d'accueil</a>
+            </h2>
+        </div>
+    {% else %}
+    <div id="rech-container">
+        <img src="img/rech.jpg" id="rechimg" alt="Recherche background">
+        <div id="section-container">
+            {% for animal in results %}
+            <section>
+                <p>
+                    Nom: {{ animal.nom }}
+                    <br>
+                    Espece: {{ animal.espece }}
+                    <br>
+                    Race: {{ animal.race }}
+                    <br>
+                    Age: {{ animal.age }} ans
+                    <br>
+                    Adresse: {{ animal.adresse }}, {{ animal.ville }}, {{ animal.cp }}
+                    <br>
+                    Description: {{ animal.description }}
+                </p>
+                <a href="/animal/{{animal.nom}}">Adopter {{ animal.nom }}</a>
+            </section>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

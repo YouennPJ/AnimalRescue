@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+   <head>
+      <link rel="stylesheet" href="/style.css">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> {% block title %}{% endblock %}- Animal rescue</title>
+   </head>
+   <!--Tête de la page-->
+   <body>
+      <div id="picture-container">
+        {% block picture %}{% endblock %}
+         <div id="menu">
+            <h1>Animal rescue</h1>
+            <form action="/search" method="GET">
+                <input type="text" name="recherche" placeholder="Rechercher">
+                <input type="image" src="/img/recherche.png"  id="cherche" alt="Submit Form">
+            </form>
+            <nav id="menu-navigation">
+               <ul id="nav">
+                  <li>
+                     <a href="/">
+                     <img src="/img/accueil.png" alt="accueil-logo">
+                     Accueil
+                     </a>
+                  </li>
+                  <li>
+                     <a href="/adoption">
+                     <img src="/img/adoption.png" alt="adoption-logo">
+                     Adoption
+                     </a>
+                  </li>
+               </ul>
+            </nav>
+            <br>
+        </div>
+        <div  id="social-bar">
+            <div id="socialbar">
+                <ul id="list-social">
+                    <li>
+                    <a href="https://twitter.com">
+                    <img src="/img/iconmedia2.png" alt="t">
+                    </a>
+                    </li>
+                    <li>
+                    <a href="https://instagram.com">
+                    <img src="/img/iconmedia3.png" alt="i">
+                    </a>
+                    </li>
+                    <li>
+                    <a href="https://facebook.com">
+                    <img src="/img/iconmedia1.png" alt="f">
+                    </a>
+                    <li>
+                </li> 
+                </ul>
+            </div>
+         </div>
+      </div>
+    <div id="separateur"></div>
+      {% block content %}{% endblock %}
+      <footer>
+         <div>
+            <img id="copyrightlogo" src="/img/copyright.jpg" alt="Copyrighted">
+            <p id="annee">2022</p>
+         </div>
+         <p id="droitC">Animal rescue tout droit réservé</p>
+      </footer>
+   </body>
+</html>

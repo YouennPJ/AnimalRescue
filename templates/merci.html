@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+    {% block picture %}
+    <img class="image-acceuil" src="/img/happy.jpg" alt="Img accueil">
+    {% endblock %}
+{% block content %}
+    <div id="happy">
+        <img src="/img/cimer.jpg" alt="Merci!">
+        <div id="absolu">
+            <h2>
+                Merci de nous faire confiance pour la mise en adoption de {{ nom }}! Vous pouvez comptez sur nous!
+            </h2>
+            <br>
+            <h2>
+                Vous allez etre rediriger vers la page de {{ nom }} d'ici 10 secondes. Si vous n'etes pas rediriger, <a href="/animal/{{nom}}">Cliquez ici!</a>
+            </h2>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+    {% block picture %}
+    <img class="image-acceuil" src="/img/ani.jpg" alt="Img accueil">
+    {% endblock %}
+{% block content %}
+    <div id="animal">
+        <div>
+            <img src="/img/fond.jpg" alt="Fond animal">
+            <div id="final">
+                <h2>
+                    Adoptez {{ animal.nom }} maintenant!!
+                </h2>
+                <br>
+                <p>
+                    Cet animaux de type {{ animal.espece }} et race {{ animal.espece }} n'attend qu'une chose et c'est le confort d'une famille aimante
+                    qui pourra bien s'occuper de lui.
+                    <br>
+                    Il n'a que {{ animal.age }}ans donc il saura vous attendrir. Vous souhaitez adopter {{ animal.nom }} ? Rien de plus simple. 
+                    <br>
+                    Envoyer un courriel a son proprietaire au {{ animal.courriel }} ou <a href="mailto:{{ animal.courriel }}">cliquez-ici !</a> 
+                    <br>
+                    Une fois les details confirme avec le maitre de l'animal, vous n'aurez qu'a le chercher au {{ animal.adresse }}, {{ animal.ville }}, {{ animal.cp }}
+                    <br>
+                    <br>
+                    Voici la description de cher ami: {{ animal.description }}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}
+Accueil
+{% endblock %}
+{% block picture %}
+    <img class="image-acceuil" src="/img/Accueilimg.jpg" alt="Img accueil">
+    {% endblock %}
+{% block content %}
+<div id="accueil">
+    <img src="img/image2.jpg" id="img1" alt="Description of image">
+    <br>
+    <h2>
+        N'attendez pas pour donner a ces animaux une nouvelle vie. Adoptez-les!
+    </h2>
+    <br>
+    {% for animal in animaux_list %}
+    <section>
+        <p>
+            Nom: {{ animal.nom }}
+            <br>
+            Espece: {{ animal.espece }}
+            <br>
+            Race: {{ animal.race }}
+            <br>
+            Age: {{ animal.age }} ans
+            <br>
+            Ville: {{ animal.ville }}
+            <br>
+            Description: {{ animal.description }}
+        </p>
+        <a href="/animal/{{animal.nom}}" >Adopter {{ animal.nom }}</a>
+    </section>
+    
+    {% endfor %}
+    <div id="conteneur1">
+        <br>
+        <h2 id="adop">
+            Vous souhaitez donner votre animal en adoption ?
+            <a href="/adoption" id="clicIci"> Cliquez ici!</a>
+        </h2>
+        <img src="img/adopte.jpg" id="img2" alt="ERER">
+    </div>
+  </div>
+{% endblock %}

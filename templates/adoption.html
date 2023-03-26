@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}
+Adoption
+{% endblock %}
+{% block picture %}
+    <img class="image-acceuil" src="/img/cat.png" alt="Img adoption">
+    {% endblock %}
+{% block content %}
+<div id="adoption">
+    <h2>
+        Remplissez le formulaire de mise en adoption suivant!
+    </h2>
+    <div id="form_container">
+        <form id="form" action="/soumettre" method="post">
+        <label for="nom">Nom:</label><br>
+        <input type="text" id="nom" name="nom" value="{{nom}}" ><br>
+        <p id="nominvalide" class="invalides">{{ nomErreur }}</p>
+    
+        <label for="espece">Espece:</label><br>
+        <input type="text" id="espece" name="espece" value="{{espece}}" ><br>
+        <p id="especeinvalide" class="invalides">{{ especeErreur }}</p>
+    
+        <label for="race">Race:</label><br>
+        <input type="text" id="race" name="race" value="{{race}}" ><br>
+        <p id="raceinvalide" class="invalides">{{ raceErreur }}</p>
+    
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" value="{{age}}"><br>
+        <p id="ageinvalide" class="invalides">{{ ageErreur }}</p>
+    
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" value="{{description}}"></textarea><br>
+        <p id="descriptioninvalide" class="invalides">{{ descriptionErreur }}</p>
+    
+        <label for="email">EMail:</label><br>
+        <input type="email" id="email" name="email" value="{{email}}" ><br>
+        <p id="emailinvalide" class="invalides">{{ emailErreur }}</p>
+    
+        <label for="rue">Rue:</label><br>
+        <input type="text" id="rue" name="rue" value="{{rue}}" ><br>
+        <p id="rueinvalide" class="invalides">{{ rueErreur }}</p>
+    
+        <label for="ville">Ville:</label><br>
+        <input type="text" id="ville" name="ville" value="{{ville}}"><br>
+        <p id="villeinvalide" class="invalides">{{ villeErreur }}</p>
+    
+        <label for="code_postal">Code Postal:</label><br>
+        <input type="text" id="code_postal" name="code_postal" value="{{code_postal}}" ><br><br>
+        <p id="code_postalinvalide" class="invalides">{{ code_postalErreur }}</p>
+    
+        <input id="sauvegarderFormulaire" type="submit" value="Soumettre">
+        <p id="submitinvalide" class="invalides">{{ submitErreur }}</p>
+        </form> 
+        <script src="script.js"></script>
+    </div>
+</div>  
+{% endblock %}
